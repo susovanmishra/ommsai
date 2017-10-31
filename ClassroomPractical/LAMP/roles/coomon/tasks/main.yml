@@ -1,2 +1,9 @@
 ---
 # tasks file for coomon
+- name: update package on ubuntu
+  command: apt-get update
+  when: ansible_os_family == "Debian"
+- name: update packages on Redhat
+  command: yum update
+  when : ansible_os_family == "Redhat"
+  
